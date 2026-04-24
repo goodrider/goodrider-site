@@ -3,76 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pièces Xiaomi | Goodrider</title>
+<title>Xiaomi | Goodrider</title>
+<link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-body{margin:0;font-family:Inter;background:#0b0b0b;color:white}
-header{padding:20px;border-bottom:1px solid #222;text-align:center}
-nav a{color:white;margin:0 15px;text-decoration:none;font-weight:600}
-nav a:hover{color:#00e000}
-h1{text-align:center;padding:20px 0;color:#00e000}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;padding:40px}
-.card{background:#111;padding:20px;border-radius:10px;text-align:center;border:1px solid #1f1f1f;transition:.2s}
-.card:hover{border-color:#00e000;transform:translateY(-5px)}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-.price{font-size:18px;font-weight:700;color:#00e000;margin:10px 0}
-button{margin-top:10px;background:#00e000;color:black;border:none;padding:10px 16px;border-radius:6px;font-weight:bold;cursor:pointer;width:100%}
-button:hover{background:#00cc00}
-footer{text-align:center;padding:20px;border-top:1px solid #222;color:#777;margin-top:40px}
-</style>
 </head>
 <body>
-
 <header>
 <nav>
 <a href="index.html">Accueil</a>
 <a href="xiaomi.html">Xiaomi</a>
 <a href="dualtron.html">Dualtron</a>
 <a href="teverun.html">Teverun</a>
+<a href="custom.html">Accessoires</a>
 </nav>
 </header>
-
-<h1>⚡ Pièces Xiaomi</h1>
-
-<section class="grid">
-
+<section class="section">
+<div class="section-header"><span class="section-title">Xiaomi</span></div>
+<h2>Trottinettes urbaines fiables</h2>
+<p>Xiaomi est l’un des leaders du marché pour les déplacements en ville. Les modèles comme la M365 sont appréciés pour leur simplicité, leur batterie efficace et leur confort de route. Goodrider assure l’entretien, la réparation et la fourniture de pièces détachées pour ces trottinettes.</p>
+</section>
+<section class="section">
+<div class="section-header"><span class="section-title">Ce que disent les utilisateurs</span></div>
+<div class="grid">
+<div class="review-card">
+<strong>Bonne gestion des diagnostics</strong>
+<p>Les avis soulignent une réparation rapide et un service client réactif. La plupart mentionnent une prise en charge fluide pour les modèles Xiaomi.</p>
+</div>
+<div class="review-card">
+<strong>Qualité et disponibilité</strong>
+<p>Les clients apprécient la disponibilité des batteries, pneus et freins Xiaomi chez Goodrider.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-header"><span class="section-title">Pièces disponibles</span></div>
+<div class="grid">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?w=300&h=160&fit=crop" alt="Pneu Xiaomi">
 <h3>Pneu Xiaomi 8.5"</h3>
 <p class="price">19€</p>
-<p>Stock: 12</p>
-<button>Réserver</button>
 </div>
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=160&fit=crop" alt="Batterie Xiaomi">
 <h3>Batterie Xiaomi M365</h3>
 <p class="price">120€</p>
-<p>Stock: 4</p>
-<button>Réserver</button>
 </div>
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1592853625601-bb9d23da12fc?w=300&h=160&fit=crop" alt="Frein Xiaomi">
 <h3>Frein disque Xiaomi</h3>
 <p class="price">25€</p>
-<p>Stock: 9</p>
-<button>Réserver</button>
 </div>
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=300&h=160&fit=crop" alt="Dashboard Xiaomi">
 <h3>Dashboard Xiaomi</h3>
 <p class="price">39€</p>
-<p>Stock: 6</p>
-<button>Réserver</button>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="button-row">
+<a class="btn" href="custom.html">Demander un devis custom</a>
+</div>
+</section>
+<footer>
+<p>© 2026 Goodrider Paris</p>
+</footer>
+
+<!-- Chat Bot Widget -->
+<div class="chat-widget">
+  <button class="chat-button" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">Goodrider Assistant</div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message bot">Bonjour ! Je suis l'assistant de Goodrider. Comment puis-je vous aider avec Xiaomi ?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Tapez votre message..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
 </div>
 
-</section>
+<script>
+function toggleChat() {
+  const chatWindow = document.getElementById('chatWindow');
+  chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+}
 
-<footer>
-© Goodrider Paris
-</footer>
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  if (!message) return;
+
+  addMessage(message, 'user');
+  input.value = '';
+
+  setTimeout(() => {
+    const response = getBotResponse(message);
+    addMessage(response, 'bot');
+  }, 500);
+}
+
+function handleKeyPress(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
+}
+
+function addMessage(text, sender) {
+  const messages = document.getElementById('chatMessages');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `chat-message ${sender}`;
+  messageDiv.textContent = text;
+  messages.appendChild(messageDiv);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function getBotResponse(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  if (lowerMessage.includes('prix') || lowerMessage.includes('coût')) {
+    return 'Pour Xiaomi, consultez les prix sur cette page ou demandez un devis.';
+  }
+  if (lowerMessage.includes('réparation') || lowerMessage.includes('entretien')) {
+    return 'Nous réparons et entretenons les Xiaomi M365 et similaires. Prenez rendez-vous !';
+  }
+  if (lowerMessage.includes('pièces') || lowerMessage.includes('batterie') || lowerMessage.includes('pneu')) {
+    return 'Nous avons batteries, pneus, freins et dashboards pour Xiaomi.';
+  }
+  if (lowerMessage.includes('contact') || lowerMessage.includes('adresse')) {
+    return '28 rue de l\'Abbé Groult, 75015 Paris. Téléphone : 01 23 45 67 89';
+  }
+  return 'Pour Xiaomi, visitez notre page ou contactez-nous pour plus d\'infos.';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const chatWindow = document.getElementById('chatWindow');
+  chatWindow.style.display = 'none';
+  chatWindow.style.flexDirection = 'column';
+});
+</script>
 
 </body>
 </html>

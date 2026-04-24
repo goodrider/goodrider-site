@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessoires & Custom | Goodrider</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="xiaomi.html">Xiaomi</a>
+<a href="dualtron.html">Dualtron</a>
+<a href="teverun.html">Teverun</a>
+<a href="custom.html">Accessoires</a>
+</nav>
+</header>
+<section class="section">
+<div class="section-header"><span class="section-title">Accessoires Custom</span></div>
+<h2>Customisation et services sur devis</h2>
+<p>Goodrider propose un espace dédié aux accessoires et à la customisation. Que vous souhaitiez un kit de visserie, une peinture personnalisée ou une étanchéification complète, nous construisons votre devis sur mesure.</p>
+</section>
+<section class="section">
+<div class="section-header"><span class="section-title">Nos offres</span></div>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092759402-362c105e5b6f?w=300&h=160&fit=crop" alt="Visserie custom">
+<h3>Kit de visserie custom</h3>
+<p class="price">20€</p>
+<p>Visserie de qualité, idéale pour les projets de customisation et les réparations précises.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=300&h=160&fit=crop" alt="Peinture trottinette">
+<h3>Peinture custom</h3>
+<p>Sur devis</p>
+<p>Rénovation de carénage, stickers ou peinture complète selon le style souhaité.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?w=300&h=160&fit=crop" alt="Pneu trottinette">
+<h3>Pneus</h3>
+<p class="price">10€ / tranche</p>
+<p>Remplacement de pneus à prix clair, adapté à votre usage urbain ou sportif.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300&h=160&fit=crop" alt="Étanchéification trottinette">
+<h3>Étanchéification</h3>
+<p>Sur devis</p>
+<p>Protection contre l’humidité et les éclaboussures pour augmenter la durée de vie de votre trottinette.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=300&h=160&fit=crop" alt="Custom special">
+<h3>Custom spécial</h3>
+<p>Sur devis</p>
+<p>Projet unique : design, peinture, pièces spéciales ou préparation compétition.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-header"><span class="section-title">Demande de devis</span></div>
+<div class="contact-grid">
+<form class="form" action="#" method="post">
+<input type="text" name="name" placeholder="Votre nom" required>
+<input type="email" name="email" placeholder="Votre email" required>
+<input type="tel" name="phone" placeholder="Téléphone" required>
+<textarea name="message" placeholder="Votre projet / demande de devis" required></textarea>
+<button class="btn" type="submit">Envoyer la demande</button>
+</form>
+<div class="card">
+<h3>Pourquoi un devis ?</h3>
+<p>Chaque custom est unique. Nous évaluons le temps de travail, les pièces nécessaires et le rendu souhaité avant de vous proposer une offre sur mesure.</p>
+<ul class="list-highlight">
+<li>Visserie custom 20€</li>
+<li>Pneus 10€ par tranche</li>
+<li>Peinture sur mesure sur devis</li>
+<li>Étanchéification sur devis</li>
+<li>Custom spécial sur devis</li>
+</ul>
+</div>
+</div>
+</section>
+<footer>
+<p>© 2026 Goodrider Paris — Atelier accessoires et custom</p>
+</footer>
+
+<!-- Chat Bot Widget -->
+<div class="chat-widget">
+  <button class="chat-button" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">Goodrider Assistant</div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message bot">Bonjour ! Je suis l'assistant de Goodrider. Comment puis-je vous aider avec les accessoires et custom ?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Tapez votre message..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  const chatWindow = document.getElementById('chatWindow');
+  chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+}
+
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  if (!message) return;
+
+  addMessage(message, 'user');
+  input.value = '';
+
+  setTimeout(() => {
+    const response = getBotResponse(message);
+    addMessage(response, 'bot');
+  }, 500);
+}
+
+function handleKeyPress(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
+}
+
+function addMessage(text, sender) {
+  const messages = document.getElementById('chatMessages');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `chat-message ${sender}`;
+  messageDiv.textContent = text;
+  messages.appendChild(messageDiv);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function getBotResponse(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  if (lowerMessage.includes('prix') || lowerMessage.includes('coût')) {
+    return 'Visserie 20€, pneus 10€/tranche, peinture/étanchéification/custom sur devis.';
+  }
+  if (lowerMessage.includes('devis') || lowerMessage.includes('demande')) {
+    return 'Utilisez le formulaire ci-dessous pour demander un devis personnalisé.';
+  }
+  if (lowerMessage.includes('visserie') || lowerMessage.includes('peinture') || lowerMessage.includes('pneu')) {
+    return 'Nous proposons visserie custom, peinture, pneus et étanchéification. Contactez-nous !';
+  }
+  if (lowerMessage.includes('contact') || lowerMessage.includes('adresse')) {
+    return '28 rue de l\'Abbé Groult, 75015 Paris. Téléphone : 01 23 45 67 89';
+  }
+  return 'Pour accessoires et custom, remplissez le formulaire de devis ou contactez-nous.';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const chatWindow = document.getElementById('chatWindow');
+  chatWindow.style.display = 'none';
+  chatWindow.style.flexDirection = 'column';
+});
+</script>
+
+</body>
+</html>

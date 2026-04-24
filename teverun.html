@@ -4,67 +4,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teverun | Goodrider</title>
+<link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-body{margin:0;font-family:Inter;background:#0b0b0b;color:white}
-header{padding:20px;border-bottom:1px solid #222;text-align:center}
-nav a{color:white;margin:0 15px;text-decoration:none;font-weight:600}
-nav a:hover{color:#00e000}
-h1{text-align:center;padding:20px 0;color:#00e000}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;padding:40px}
-.card{background:#111;padding:20px;border-radius:10px;text-align:center;border:1px solid #1f1f1f;transition:.2s}
-.card:hover{border-color:#00e000;transform:translateY(-5px)}
-.card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-.price{font-size:18px;font-weight:700;color:#00e000;margin:10px 0}
-button{margin-top:10px;background:#00e000;color:black;border:none;padding:10px 16px;border-radius:6px;font-weight:bold;cursor:pointer;width:100%}
-button:hover{background:#00cc00}
-footer{text-align:center;padding:20px;border-top:1px solid #222;color:#777;margin-top:40px}
-</style>
 </head>
 <body>
-
 <header>
 <nav>
 <a href="index.html">Accueil</a>
 <a href="xiaomi.html">Xiaomi</a>
 <a href="dualtron.html">Dualtron</a>
 <a href="teverun.html">Teverun</a>
+<a href="custom.html">Accessoires</a>
 </nav>
 </header>
-
-<h1>⚡ Pièces Teverun</h1>
-
-<section class="grid">
-
+<section class="section">
+<div class="section-header"><span class="section-title">Teverun</span></div>
+<h2>Design pratique et durabilité</h2>
+<p>Teverun propose des trottinettes adaptées aux trajets quotidiens avec un bon rapport qualité/prix. Goodrider prend en charge la maintenance sur ces modèles, notamment le remplacement de batteries, de pneus et la gestion des systèmes électroniques.</p>
+</section>
+<section class="section">
+<div class="section-header"><span class="section-title">Avis des utilisateurs</span></div>
+<div class="grid">
+<div class="review-card">
+<strong>Solides sur la route</strong>
+<p>Les avis mettent en avant la solidité et la fiabilité des Teverun après intervention chez Goodrider.</p>
+</div>
+<div class="review-card">
+<strong>Service adapté</strong>
+<p>Les clients apprécient le conseil personnalisé et la compatibilité des pièces proposées pour Teverun.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-header"><span class="section-title">Pièces Teverun</span></div>
+<div class="grid">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=300&h=160&fit=crop" alt="Pneu Teverun">
 <h3>Pneu Teverun</h3>
 <p class="price">49€</p>
-<p>Stock: 3</p>
-<button>Réserver</button>
 </div>
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1609592806596-b43c48b3a1e3?w=300&h=160&fit=crop" alt="Batterie Teverun">
 <h3>Batterie Teverun Pro</h3>
 <p class="price">420€</p>
-<p>Stock: 1</p>
-<button>Réserver</button>
 </div>
-
 <div class="card">
 <img src="https://images.unsplash.com/photo-1517949908110-721d21c0af40?w=300&h=160&fit=crop" alt="Amortisseur Teverun">
 <h3>Amortisseur Teverun</h3>
 <p class="price">89€</p>
-<p>Stock: 5</p>
-<button>Réserver</button>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="button-row">
+<a class="btn" href="custom.html">Demander un devis teverun</a>
+</div>
+</section>
+<footer>
+<p>© 2026 Goodrider Paris</p>
+</footer>
+
+<!-- Chat Bot Widget -->
+<div class="chat-widget">
+  <button class="chat-button" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">Goodrider Assistant</div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message bot">Bonjour ! Je suis l'assistant de Goodrider. Comment puis-je vous aider avec Teverun ?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Tapez votre message..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()">Envoyer</button>
+    </div>
+  </div>
 </div>
 
-</section>
+<script>
+function toggleChat() {
+  const chatWindow = document.getElementById('chatWindow');
+  chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+}
 
-<footer>
-© Goodrider Paris
-</footer>
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  if (!message) return;
+
+  addMessage(message, 'user');
+  input.value = '';
+
+  setTimeout(() => {
+    const response = getBotResponse(message);
+    addMessage(response, 'bot');
+  }, 500);
+}
+
+function handleKeyPress(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
+}
+
+function addMessage(text, sender) {
+  const messages = document.getElementById('chatMessages');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `chat-message ${sender}`;
+  messageDiv.textContent = text;
+  messages.appendChild(messageDiv);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function getBotResponse(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  if (lowerMessage.includes('prix') || lowerMessage.includes('coût')) {
+    return 'Pour Teverun, consultez les prix sur cette page ou demandez un devis.';
+  }
+  if (lowerMessage.includes('réparation') || lowerMessage.includes('entretien')) {
+    return 'Nous réparons et entretenons les Teverun, y compris batteries et amortisseurs.';
+  }
+  if (lowerMessage.includes('pièces') || lowerMessage.includes('batterie') || lowerMessage.includes('pneu')) {
+    return 'Nous avons pneus, batteries et amortisseurs pour Teverun.';
+  }
+  if (lowerMessage.includes('contact') || lowerMessage.includes('adresse')) {
+    return '28 rue de l\'Abbé Groult, 75015 Paris. Téléphone : 01 23 45 67 89';
+  }
+  return 'Pour Teverun, visitez notre page ou contactez-nous pour plus d\'infos.';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const chatWindow = document.getElementById('chatWindow');
+  chatWindow.style.display = 'none';
+  chatWindow.style.flexDirection = 'column';
+});
+</script>
 
 </body>
 </html>
