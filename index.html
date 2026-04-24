@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goodrider Paris</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter;background:#0b0b0b;color:white;text-align:center}
+header{padding:20px;border-bottom:1px solid #222}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:600}
+nav a:hover{color:#00e000}
+.hero{padding:120px 20px}
+.hero img{height:80px;margin-bottom:30px}
+.hero h1{font-size:40px;margin-bottom:10px}
+.hero p{color:#bbb;margin-bottom:30px}
+.btn{background:#00e000;color:black;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:700;margin:5px;display:inline-block}
+footer{margin-top:80px;padding:20px;border-top:1px solid #222;color:#777}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="xiaomi.html">Pièces Xiaomi</a>
+<a href="dualtron.html">Dualtron</a>
+<a href="teverun.html">Teverun</a>
+</nav>
+</header>
+
+<section class="hero">
+<img src="logo.png" alt="Goodrider" onerror="this.style.display='none'">
+<h1>GOODRIDER</h1>
+<p>Trottinettes électriques et pièces détachées</p>
+
+<a class="btn" href="xiaomi.html">Pièces Xiaomi</a>
+<a class="btn" href="dualtron.html">Trottinettes Dualtron</a>
+<a class="btn" href="teverun.html">Teverun</a>
+
+<p style="margin-top:40px;color:#aaa">
+28 rue de l'Abbé Groult • Paris 15<br>
+Click & Collect en magasin
+</p>
+</section>
+
+<footer>
+© Goodrider Paris
+</footer>
+
+</body>
+</html>
+nav a{margin-left:25px;text-decoration:none;color:white;font-weight:500}
+nav a:hover{color:#00e000}
+.hero{padding:110px 20px;text-align:center;background:linear-gradient(180deg,#050505,#0b0b0b)}
+.hero h1{font-size:48px;margin-bottom:20px}
+.hero p{color:#bdbdbd;margin-bottom:30px}
+.btn{background:#00e000;color:black;padding:14px 26px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn:hover{background:#00cc00}
+.section{padding:80px 40px}
+.section h2{text-align:center;margin-bottom:40px;font-size:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+.card{background:#111;border-radius:14px;padding:20px;text-align:center;border:1px solid #1f1f1f;transition:.2s}
+.card:hover{border-color:#00e000;transform:translateY(-5px)}
+.card img{width:100%;height:170px;object-fit:cover;border-radius:10px;margin-bottom:15px}
+.card h3{margin-bottom:10px}
+.card p{margin:5px 0}
+.price{font-size:18px;font-weight:700;color:#00e000}
+.card button{margin-top:10px;background:#00e000;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;width:100%}
+.card button:hover{background:#00cc00}
+.stock{font-size:13px;color:#9be29b}
+.cart{position:fixed;right:20px;bottom:20px;background:#00e000;color:black;padding:14px 20px;border-radius:30px;font-weight:700;cursor:pointer;z-index:50}
+.cart:hover{background:#00cc00}
+.cart-panel{position:fixed;right:-380px;top:0;width:320px;height:100%;background:#111;padding:20px;transition:.3s;overflow:auto;z-index:101;border-left:1px solid #1f1f1f}
+.cart-panel.open{right:0}
+.cart-panel h3{margin-bottom:20px}
+.item{margin-bottom:8px;padding:8px;background:#0b0b0b;border-radius:6px;display:flex;justify-content:space-between}
+.item button{background:#ff4444;border:none;padding:4px 8px;border-radius:4px;color:white;font-size:12px;cursor:pointer}
+.map{width:100%;height:400px;border:0}
+footer{text-align:center;padding:30px;background:#050505;border-top:1px solid #1f1f1f;color:#777}
+.section-title{color:#00e000}
+</style>
+</head>
+<body>
+
+<header>
+<img src="logo.png" style="height:45px" onerror="this.style.display='none'">
+<div style="font-weight:700;font-size:20px">GOODRIDER</div>
+<nav>
+<a href="#xiaomi">Xiaomi</a>
+<a href="#dualtron">Dualtron</a>
+<a href="#teverun">Teverun</a>
+<a href="#accessoires">Accessoires</a>
+<a href="#magasin">Magasin</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Pièces Trottinettes</h1>
+<p>Xiaomi • Dualtron • Teverun</p>
+<a class="btn" href="#xiaomi">Voir les pièces</a>
+</section>
+
+<!-- XIAOMI -->
+<section id="xiaomi" class="section">
+<h2><span class="section-title">⚡ Pièces Xiaomi</span></h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?w=300&h=170&fit=crop" alt="Pneu Xiaomi 8.5">
+<h3>Pneu Xiaomi 8.5"</h3>
+<p class="price">19€</p>
+<p class="stock">Stock: 12</p>
+<button onclick="addCart('Pneu Xiaomi 8.5', 19)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=170&fit=crop" alt="Batterie Xiaomi">
+<h3>Batterie Xiaomi M365</h3>
+<p class="price">120€</p>
+<p class="stock">Stock: 4</p>
+<button onclick="addCart('Batterie Xiaomi M365', 120)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1592853625601-bb9d23da12fc?w=300&h=170&fit=crop" alt="Frein Xiaomi">
+<h3>Frein disque Xiaomi</h3>
+<p class="price">25€</p>
+<p class="stock">Stock: 9</p>
+<button onclick="addCart('Frein Xiaomi', 25)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=300&h=170&fit=crop" alt="Dashboard Xiaomi">
+<h3>Dashboard Xiaomi</h3>
+<p class="price">39€</p>
+<p class="stock">Stock: 6</p>
+<button onclick="addCart('Dashboard Xiaomi', 39)">Réserver</button>
+</div>
+
+</div>
+</section>
+
+<!-- DUALTRON -->
+<section id="dualtron" class="section">
+<h2><span class="section-title">⚡ Pièces Dualtron</span></h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621955964441-c173e01c135b?w=300&h=170&fit=crop" alt="Pneu Dualtron">
+<h3>Pneu Dualtron</h3>
+<p class="price">45€</p>
+<p class="stock">Stock: 5</p>
+<button onclick="addCart('Pneu Dualtron', 45)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=300&h=170&fit=crop" alt="Moteur Dualtron">
+<h3>Moteur Dualtron</h3>
+<p class="price">260€</p>
+<p class="stock">Stock: 2</p>
+<button onclick="addCart('Moteur Dualtron', 260)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091870627-3c0f9f94c39d?w=300&h=170&fit=crop" alt="Frein hydraulique">
+<h3>Frein hydraulique Dualtron</h3>
+<p class="price">79€</p>
+<p class="stock">Stock: 4</p>
+<button onclick="addCart('Frein Dualtron', 79)">Réserver</button>
+</div>
+
+</div>
+</section>
+
+<!-- TEVERUN -->
+<section id="teverun" class="section">
+<h2><span class="section-title">⚡ Pièces Teverun</span></h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=300&h=170&fit=crop" alt="Pneu Teverun">
+<h3>Pneu Teverun</h3>
+<p class="price">49€</p>
+<p class="stock">Stock: 3</p>
+<button onclick="addCart('Pneu Teverun', 49)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1609592806596-b43c48b3a1e3?w=300&h=170&fit=crop" alt="Batterie Teverun">
+<h3>Batterie Teverun Pro</h3>
+<p class="price">420€</p>
+<p class="stock">Stock: 1</p>
+<button onclick="addCart('Batterie Teverun', 420)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517949908110-721d21c0af40?w=300&h=170&fit=crop" alt="Amortisseur Teverun">
+<h3>Amortisseur Teverun</h3>
+<p class="price">89€</p>
+<p class="stock">Stock: 5</p>
+<button onclick="addCart('Amortisseur Teverun', 89)">Réserver</button>
+</div>
+
+</div>
+</section>
+
+<section id="accessoires" class="section">
+<h2><span class="section-title">🛠️ Accessoires Custom</span></h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092759402-362c105e5b6f?w=300&h=170&fit=crop" alt="Visserie custom">
+<h3>Kit de visserie custom</h3>
+<p class="price">20€</p>
+<p class="stock">Stock: 10</p>
+<button onclick="addCart('Kit de visserie custom', 20)">Réserver</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=300&h=170&fit=crop" alt="Top block">
+<h3>Top block</h3>
+<p class="price">25€</p>
+<p class="stock">Stock: 15</p>
+<button onclick="addCart('Top block', 25)">Réserver</button>
+</div>
+
+</div>
+</section>
+
+<section id="magasin" class="section">
+<h2>📍 Magasin Goodrider</h2>
+<div style="text-align:center;margin-bottom:30px">
+<p><strong>28 rue de l'Abbé Groult</strong></p>
+<p><strong>75015 Paris</strong></p>
+<p style="color:#00e000;margin-top:15px">Click & Collect disponible</p>
+</div>
+
+<iframe class="map" src="https://maps.google.com/maps?q=28%20rue%20de%20l'abb%C3%A9%20groult%20paris&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<div class="cart" onclick="toggleCart()">🛒 Panier (<span id="cartCount">0</span>)</div>
+
+<div class="cart-panel" id="cart">
+<h3>🛒 Réservation Click & Collect</h3>
+<div id="cartItems"></div>
+<p id="total" style="margin:15px 0;font-weight:700;font-size:16px">Total: 0€</p>
+<input id="nom" placeholder="Votre nom" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #1f1f1f;border-radius:6px;background:#0b0b0b;color:white">
+<input id="tel" placeholder="Téléphone" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #1f1f1f;border-radius:6px;background:#0b0b0b;color:white">
+<button onclick="envoyerReservation()" style="width:100%;padding:12px;background:#00e000;border:none;font-weight:700;border-radius:6px;cursor:pointer">Envoyer réservation</button>
+</div>
+
+<footer>
+© 2026 Goodrider Paris - Trottinettes électriques et pièces détachées
+</footer>
+
+<script>
+let cart = []
+
+function addCart(name, price) {
+  cart.push({name, price})
+  renderCart()
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1)
+  renderCart()
+}
+
+function renderCart() {
+  let html = ""
+  let total = 0
+  cart.forEach((item, index) => {
+    total += item.price
+    html += `<div class='item'><span>${item.name} (${item.price}€)</span><button onclick="removeFromCart(${index})">✕</button></div>`
+  })
+  document.getElementById('cartItems').innerHTML = html || '<p style="color:#999">Panier vide</p>'
+  document.getElementById('total').innerText = `Total: ${total}€`
+  document.getElementById('cartCount').innerText = cart.length
+}
+
+function toggleCart() {
+  document.getElementById('cart').classList.toggle('open')
+}
+
+function envoyerReservation() {
+  const nom = document.getElementById('nom').value
+  const tel = document.getElementById('tel').value
+  
+  if (!nom || !tel) {
+    alert('Veuillez remplir tous les champs')
+    return
+  }
+  
+  if (cart.length === 0) {
+    alert('Votre panier est vide')
+    return
+  }
+  
+  let commande = `Commande de ${nom}\nTéléphone: ${tel}\n\nArticles:\n`
+  let total = 0
+  cart.forEach(item => {
+    commande += `- ${item.name}: ${item.price}€\n`
+    total += item.price
+  })
+  commande += `\nTotal: ${total}€`
+  
+  console.log(commande)
+  alert('✅ Réservation confirmée!\n\n' + commande + '\n\nVenez chercher votre commande au magasin.')
+  cart = []
+  renderCart()
+  toggleCart()
+}
+</script>
+
+</body>
+</html>
